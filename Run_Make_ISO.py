@@ -38,6 +38,10 @@ def downloadexe():
 
 
 if __name__ == "__main__":
+    print("Chương trình tạo toàn bộ các folder của thư mục này thành file ISO tự động")
+    print(
+        "Chương trình sẽ tự download các file cần thiết về rồi sẽ tạo file create_iso.bat, chạy file bat đó để tạo file iso"
+    )
     # Gọi hàm để tải file nếu chưa tồn tại
     downloadexe()
 
