@@ -1,5 +1,20 @@
 import os
 import requests
+from os.path import join, dirname
+import pathlib
+from ParamsBase import tactParametters
+
+drive = pathlib.Path.home().drive
+root_dir = os.getcwd()
+
+
+# Đường dẫn thực của Folder2Iso.exe
+folder2iso_path = join(drive, "RunProgram", "Folder2Iso", "Folder2Iso.exe")
+mParams = tactParametters(
+    logdir=dirname(folder2iso_path),
+)
+
+os.makedirs(dirname(folder2iso_path), exist_ok=True)
 
 
 def get_folder_files_bytes(dir_path):
@@ -13,10 +28,6 @@ def get_folder_files_bytes(dir_path):
             file_path = os.path.join(root, file)
             total_size += os.path.getsize(file_path)
     return folder_count, file_count, total_size
-
-
-# Đường dẫn thực của Folder2Iso.exe
-folder2iso_path = os.path.realpath("Folder2Iso.exe")
 
 
 def downloadexe():
@@ -38,15 +49,17 @@ def downloadexe():
 
 
 if __name__ == "__main__":
-    print("Chương trình tạo toàn bộ các folder của thư mục này thành file ISO tự động")
-    print(
+    mParams.ta_print_log(
+        "Chương trình tạo toàn bộ các folder của thư mục này thành file ISO tự động"
+    )
+    mParams.ta_print_log(
         "Chương trình sẽ tự download các file cần thiết về rồi sẽ tạo file create_iso.bat, chạy file bat đó để tạo file iso"
     )
     # Gọi hàm để tải file nếu chưa tồn tại
     downloadexe()
-
+    mParams.ta_print_log(folder2iso_path)
     # Đường dẫn tới Folder2Iso và thư mục gốc
-    root_dir = os.getcwd()
+
     output_file = "create_iso.bat"
 
     # Tạo file batch
@@ -64,6 +77,7 @@ if __name__ == "__main__":
                     f'{folder_count} {file_count} {total_size} "UTF-8"\n'
                 )
                 batch_file.write(batch_line)
+                mParams.ta_print_log(batch_line)
 
-    print(f"File batch đã được tạo tại: {output_file}")
+    mParams.ta_print_log(f"File batch đã được tạo tại: {output_file}")
     os.startfile(output_file)

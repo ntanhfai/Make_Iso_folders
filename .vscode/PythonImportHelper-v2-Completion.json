@@ -1,5 +1,54 @@
 [
     {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "exists",
+        "importPath": "os.path",
+        "description": "os.path",
+        "isExtraImport": true,
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
+        "label": "join",
+        "importPath": "os.path",
+        "description": "os.path",
+        "isExtraImport": true,
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
+        "label": "dirname",
+        "importPath": "os.path",
+        "description": "os.path",
+        "isExtraImport": true,
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
+        "label": "join",
+        "importPath": "os.path",
+        "description": "os.path",
+        "isExtraImport": true,
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
+        "label": "dirname",
+        "importPath": "os.path",
+        "description": "os.path",
+        "isExtraImport": true,
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -9,12 +58,80 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "pprint",
+        "importPath": "pprint",
+        "description": "pprint",
+        "isExtraImport": true,
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "YAML",
+        "importPath": "ruamel.yaml",
+        "description": "ruamel.yaml",
+        "isExtraImport": true,
+        "detail": "ruamel.yaml",
+        "documentation": {}
+    },
+    {
         "label": "requests",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "requests",
         "description": "requests",
         "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "pathlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "tactParametters",
+        "importPath": "ParamsBase",
+        "description": "ParamsBase",
+        "isExtraImport": true,
+        "detail": "ParamsBase",
+        "documentation": {}
+    },
+    {
+        "label": "tactParametters",
+        "kind": 6,
+        "importPath": "ParamsBase",
+        "description": "ParamsBase",
+        "peekOfCode": "class tactParametters:\n    def __init__(self, logdir=\"\"):\n        self.ModuleName = \"TACT\"\n        self.logdir = logdir\n        # self.debug_config_path = \"AI_Data/debug.yml\"\n    def to_yaml(self, file_path):\n        global yml_file_contents\n        with open(file_path, \"w\", encoding=\"utf-8\") as file:\n            # mdict = {self.ModuleName: self.__dict__}\n            yml_file_contents[self.ModuleName] = self.__dict__.copy()",
+        "detail": "ParamsBase",
+        "documentation": {}
+    },
+    {
+        "label": "yaml",
+        "kind": 5,
+        "importPath": "ParamsBase",
+        "description": "ParamsBase",
+        "peekOfCode": "yaml = YAML()\n# yaml.indent(offset=4)\nyaml.compact(seq_seq=False, seq_map=False)\nyml_file_contents = {}\nclass tactParametters:\n    def __init__(self, logdir=\"\"):\n        self.ModuleName = \"TACT\"\n        self.logdir = logdir\n        # self.debug_config_path = \"AI_Data/debug.yml\"\n    def to_yaml(self, file_path):",
+        "detail": "ParamsBase",
+        "documentation": {}
+    },
+    {
+        "label": "yml_file_contents",
+        "kind": 5,
+        "importPath": "ParamsBase",
+        "description": "ParamsBase",
+        "peekOfCode": "yml_file_contents = {}\nclass tactParametters:\n    def __init__(self, logdir=\"\"):\n        self.ModuleName = \"TACT\"\n        self.logdir = logdir\n        # self.debug_config_path = \"AI_Data/debug.yml\"\n    def to_yaml(self, file_path):\n        global yml_file_contents\n        with open(file_path, \"w\", encoding=\"utf-8\") as file:\n            # mdict = {self.ModuleName: self.__dict__}",
+        "detail": "ParamsBase",
         "documentation": {}
     },
     {
@@ -36,11 +153,38 @@
         "documentation": {}
     },
     {
+        "label": "drive",
+        "kind": 5,
+        "importPath": "Run_Make_ISO",
+        "description": "Run_Make_ISO",
+        "peekOfCode": "drive = pathlib.Path.home().drive\nroot_dir = os.getcwd()\n# Đường dẫn thực của Folder2Iso.exe\nfolder2iso_path = join(drive, \"RunProgram\", \"Folder2Iso\", \"Folder2Iso.exe\")\nmParams = tactParametters(\n    logdir=dirname(folder2iso_path),\n)\nos.makedirs(dirname(folder2iso_path), exist_ok=True)\ndef get_folder_files_bytes(dir_path):\n    folder_count = 0",
+        "detail": "Run_Make_ISO",
+        "documentation": {}
+    },
+    {
+        "label": "root_dir",
+        "kind": 5,
+        "importPath": "Run_Make_ISO",
+        "description": "Run_Make_ISO",
+        "peekOfCode": "root_dir = os.getcwd()\n# Đường dẫn thực của Folder2Iso.exe\nfolder2iso_path = join(drive, \"RunProgram\", \"Folder2Iso\", \"Folder2Iso.exe\")\nmParams = tactParametters(\n    logdir=dirname(folder2iso_path),\n)\nos.makedirs(dirname(folder2iso_path), exist_ok=True)\ndef get_folder_files_bytes(dir_path):\n    folder_count = 0\n    file_count = 0",
+        "detail": "Run_Make_ISO",
+        "documentation": {}
+    },
+    {
         "label": "folder2iso_path",
         "kind": 5,
         "importPath": "Run_Make_ISO",
         "description": "Run_Make_ISO",
-        "peekOfCode": "folder2iso_path = os.path.realpath(\"Folder2Iso.exe\")\ndef downloadexe():\n    if not os.path.exists(folder2iso_path):\n        url_exe = \"https://github.com/ntanhfai/Make_Iso_folders/blob/main/Folder2Iso.exe?raw=true\"  # URL có thêm \"?raw=true\" để tải file trực tiếp\n        print(f\"Đang tải {url_exe} về {folder2iso_path}...\")\n        try:\n            # Tải file từ URL\n            response = requests.get(url_exe)\n            response.raise_for_status()  # Kiểm tra nếu có lỗi khi tải file\n            # Lưu file vào folder2iso_path",
+        "peekOfCode": "folder2iso_path = join(drive, \"RunProgram\", \"Folder2Iso\", \"Folder2Iso.exe\")\nmParams = tactParametters(\n    logdir=dirname(folder2iso_path),\n)\nos.makedirs(dirname(folder2iso_path), exist_ok=True)\ndef get_folder_files_bytes(dir_path):\n    folder_count = 0\n    file_count = 0\n    total_size = 0\n    for root, dirs, files in os.walk(dir_path):",
+        "detail": "Run_Make_ISO",
+        "documentation": {}
+    },
+    {
+        "label": "mParams",
+        "kind": 5,
+        "importPath": "Run_Make_ISO",
+        "description": "Run_Make_ISO",
+        "peekOfCode": "mParams = tactParametters(\n    logdir=dirname(folder2iso_path),\n)\nos.makedirs(dirname(folder2iso_path), exist_ok=True)\ndef get_folder_files_bytes(dir_path):\n    folder_count = 0\n    file_count = 0\n    total_size = 0\n    for root, dirs, files in os.walk(dir_path):\n        folder_count += len(dirs)",
         "detail": "Run_Make_ISO",
         "documentation": {}
     }
