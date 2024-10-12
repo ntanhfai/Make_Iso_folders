@@ -1,0 +1,56 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "gdown",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "gdown",
+        "description": "gdown",
+        "detail": "gdown",
+        "documentation": {}
+    },
+    {
+        "label": "get_folder_files_bytes",
+        "kind": 2,
+        "importPath": "Run_Make_ISO",
+        "description": "Run_Make_ISO",
+        "peekOfCode": "def get_folder_files_bytes(dir_path):\n    folder_count = 0\n    file_count = 0\n    total_size = 0\n    for root, dirs, files in os.walk(dir_path):\n        folder_count += len(dirs)\n        file_count += len(files)\n        for file in files:\n            file_path = os.path.join(root, file)\n            total_size += os.path.getsize(file_path)",
+        "detail": "Run_Make_ISO",
+        "documentation": {}
+    },
+    {
+        "label": "downloadexe",
+        "kind": 2,
+        "importPath": "Run_Make_ISO",
+        "description": "Run_Make_ISO",
+        "peekOfCode": "def downloadexe():\n    if not os.path.exists(folder2iso_path):\n        url_exe = \"https://drive.google.com/uc?id=0B7nKMWPhyfl-SlVoWXprWkhHR2c&export=download\"\n        output_dir = os.path.dirname(folder2iso_pathraw)\n        if not os.path.exists(output_dir):\n            os.makedirs(output_dir)\n        # Tải file về đường dẫn folder2iso_path\n        gdown.download(url_exe, folder2iso_pathraw, quiet=False)\n        os.startfile(folder2iso_path)\nif __name__==\"__main__\":",
+        "detail": "Run_Make_ISO",
+        "documentation": {}
+    },
+    {
+        "label": "folder2iso_pathraw",
+        "kind": 5,
+        "importPath": "Run_Make_ISO",
+        "description": "Run_Make_ISO",
+        "peekOfCode": "folder2iso_pathraw = r\"D:/Folder2Iso.exe\"\nfolder2iso_path = r\"D:/Folder2Iso/Folder2Iso.exe\"\ndef downloadexe():\n    if not os.path.exists(folder2iso_path):\n        url_exe = \"https://drive.google.com/uc?id=0B7nKMWPhyfl-SlVoWXprWkhHR2c&export=download\"\n        output_dir = os.path.dirname(folder2iso_pathraw)\n        if not os.path.exists(output_dir):\n            os.makedirs(output_dir)\n        # Tải file về đường dẫn folder2iso_path\n        gdown.download(url_exe, folder2iso_pathraw, quiet=False)",
+        "detail": "Run_Make_ISO",
+        "documentation": {}
+    },
+    {
+        "label": "folder2iso_path",
+        "kind": 5,
+        "importPath": "Run_Make_ISO",
+        "description": "Run_Make_ISO",
+        "peekOfCode": "folder2iso_path = r\"D:/Folder2Iso/Folder2Iso.exe\"\ndef downloadexe():\n    if not os.path.exists(folder2iso_path):\n        url_exe = \"https://drive.google.com/uc?id=0B7nKMWPhyfl-SlVoWXprWkhHR2c&export=download\"\n        output_dir = os.path.dirname(folder2iso_pathraw)\n        if not os.path.exists(output_dir):\n            os.makedirs(output_dir)\n        # Tải file về đường dẫn folder2iso_path\n        gdown.download(url_exe, folder2iso_pathraw, quiet=False)\n        os.startfile(folder2iso_path)",
+        "detail": "Run_Make_ISO",
+        "documentation": {}
+    }
+]
